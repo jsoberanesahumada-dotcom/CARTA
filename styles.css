@@ -1,0 +1,114 @@
+/* Estilos generales y reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para el diseño responsivo */
+}
+
+body {
+    /* --- FONDO (SIN CAMBIOS) --- */
+    background-color: #f7f3e8; /* Color de fondo de respaldo si la imagen no carga */
+    background-image: url('/img/FONDO.jpg'); /* ¡IMPORTANTE! Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Escala la imagen para cubrir todo el body */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+
+    font-family: 'Roboto Slab', serif; /* Fuente principal por defecto */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 20px;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+/* Contenedor principal para centrar los bloques */
+.contenedor-principal {
+    width: 100%;
+    max-width: 500px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    z-index: 1; 
+    position: relative; 
+}
+
+/* Estilos comunes para todos los bloques (título, texto, botón) */
+.bloque {
+    background-color: rgba(216, 172, 107, 0.9); /* Transparencia para ver el fondo */
+    color: #333; 
+    padding: 15px 30px;
+    border-radius: 10px; 
+    text-align: center;
+    width: 100%; 
+    max-width: 450px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo específico para el bloque del Título */
+.titulo-bloque {
+    margin-top: 10px; 
+}
+
+.titulo-bloque h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo específico para el bloque del Texto Principal */
+.texto-bloque {
+    /* --- CAMBIO CRUCIAL AQUÍ --- */
+    /* ELIMINAMOS "height: 300px;" */
+    
+    display: flex;
+    align-items: center; /* Todavía centra verticalmente si el texto es corto */
+    justify-content: center; /* Centra el texto horizontalmente */
+    font-size: 1.1em;
+    padding: 30px; /* Mantenemos el padding para el espacio interior */
+    
+    /* Nota: 'align-items: center' ya no tendrá efecto en texto largo (porque solo hay una línea)
+    pero mantiene el centrado vertical si el texto es corto (por ejemplo, si tiene solo una o dos líneas) */
+}
+
+/* Estilo específico para el Botón */
+.boton-bloque {
+    cursor: pointer;
+    border: none;
+    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive; 
+    font-weight: 700;
+    padding: 10px 40px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-bloque:hover {
+    background-color: #c99e5f; 
+}
+
+/* Media Query para asegurar la Responsividad */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; 
+    }
+
+    .contenedor-principal {
+        gap: 15px;
+    }
+
+    .bloque {
+        padding: 10px 20px; 
+    }
+
+    /* ELIMINAMOS TAMBIÉN EL AJUSTE DE ALTURA EN MÓVILES */
+    /* .texto-bloque { height: 250px; } */ 
+
+    .titulo-bloque h1 {
+        font-size: 1.5em;
+    }
+
+    .boton-bloque {
+        font-size: 1.3em;
+    }
+}
