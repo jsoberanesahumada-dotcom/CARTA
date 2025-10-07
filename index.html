@@ -65,7 +65,14 @@
             // 4. Aplicar el nuevo contenido
             textoElemento.textContent = textos[nuevoIndice];
             tituloElemento.textContent = titulos[nuevoIndice]; // Aplicar el nuevo título
+
+            // 5. HACER SCROLL AL INICIO DE LA PÁGINA
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Hace que el desplazamiento sea suave
+            });
         });
     </script>
 </body>
+
 </html>
